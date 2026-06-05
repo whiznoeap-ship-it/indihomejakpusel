@@ -3,35 +3,477 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IndiHome by Telkomsel</title>
-<link rel="stylesheet" href="style.css">
+<title>IndiHome by Telkomsel | Internet Cepat & Stabil</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fb;
+color:#333;
+}
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:#E30613;
+}
+
+.nav-links a{
+text-decoration:none;
+margin-left:20px;
+color:#333;
+font-weight:500;
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(227,6,19,.8),rgba(227,6,19,.8)),
+url('https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content{
+max-width:800px;
+}
+
+.hero h1{
+font-size:54px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+margin:5px;
+transition:.3s;
+}
+
+.btn-primary{
+background:white;
+color:#E30613;
+}
+
+.btn-secondary{
+background:#25D366;
+color:white;
+}
+
+.section{
+padding:90px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:50px;
+color:#E30613;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.feature{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.feature h3{
+margin-bottom:10px;
+}
+
+.packages{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.speed{
+font-size:50px;
+font-weight:700;
+color:#E30613;
+}
+
+.price{
+font-size:32px;
+font-weight:700;
+color:#28a745;
+margin:15px 0;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.testimonial{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-box{
+background:white;
+padding:40px;
+border-radius:20px;
+max-width:700px;
+margin:auto;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.submit-btn{
+width:100%;
+border:none;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+footer{
+background:#1d1d1d;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+color:white;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+</style>
 </head>
 <body>
-<header class="hero">
-<h1>IndiHome by Telkomsel</h1>
-<p>Internet cepat dan stabil untuk rumah Anda</p>
-<a class="btn" href="#paket">Lihat Paket</a>
-</header>
 
-<section id="paket">
-<h2>Paket Internet</h2>
-<div class="cards">
-<div class="card"><h3>50 Mbps</h3><p>Rp230.000</p></div>
-<div class="card"><h3>75 Mbps</h3><p>Rp250.000</p></div>
-<div class="card"><h3>150 Mbps</h3><p>Rp325.000</p></div>
-<div class="card"><h3>200 Mbps</h3><p>Rp490.000</p></div>
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo">IndiHome</div>
+<div class="nav-links">
+<a href="#paket">Paket</a>
+<a href="#keunggulan">Keunggulan</a>
+<a href="#daftar">Daftar</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Internet Cepat & Stabil untuk Rumah Anda</h1>
+<p>Nikmati layanan IndiHome by Telkomsel dengan jaringan fiber optik berkualitas.</p>
+
+<a href="#paket" class="btn btn-primary">Lihat Paket</a>
+<a href="https://wa.me/6281388097209" class="btn btn-secondary">Hubungi Sales</a>
 </div>
 </section>
 
-<section>
-<h2>Daftar Sekarang</h2>
-<form onsubmit="kirimWA();return false;">
-<input id="nama" placeholder="Nama" required>
-<input id="alamat" placeholder="Alamat" required>
-<button type="submit">Kirim ke WhatsApp</button>
-</form>
+<section id="keunggulan" class="section">
+<div class="container">
+
+<h2 class="section-title">Keunggulan IndiHome</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>⚡ Internet Cepat</h3>
+<p>Kecepatan hingga 200 Mbps.</p>
+</div>
+
+<div class="feature">
+<h3>📶 Jaringan Stabil</h3>
+<p>Cocok untuk streaming, gaming dan meeting online.</p>
+</div>
+
+<div class="feature">
+<h3>🛠 Instalasi Cepat</h3>
+<p>Proses pemasangan mudah dan cepat.</p>
+</div>
+
+<div class="feature">
+<h3>☎ Dukungan Pelanggan</h3>
+<p>Siap membantu kebutuhan internet Anda.</p>
+</div>
+
+</div>
+
+</div>
 </section>
 
-<script src="script.js"></script>
+<section id="paket" class="section">
+<div class="container">
+
+<h2 class="section-title">Pilih Paket Favorit Anda</h2>
+
+<div class="packages">
+
+<div class="card">
+<h3>50 Mbps</h3>
+<div class="speed">50</div>
+<div class="price">Rp230.000</div>
+<a class="btn btn-secondary"
+href="https://wa.me/6281388097209?text=Saya%20tertarik%20paket%2050%20Mbps">
+Pesan Sekarang
+</a>
+</div>
+
+<div class="card">
+<h3>75 Mbps</h3>
+<div class="speed">75</div>
+<div class="price">Rp250.000</div>
+<a class="btn btn-secondary"
+href="https://wa.me/6281388097209?text=Saya%20tertarik%20paket%2075%20Mbps">
+Pesan Sekarang
+</a>
+</div>
+
+<div class="card">
+<h3>150 Mbps</h3>
+<div class="speed">150</div>
+<div class="price">Rp325.000</div>
+<a class="btn btn-secondary"
+href="https://wa.me/6281388097209?text=Saya%20tertarik%20paket%20150%20Mbps">
+Pesan Sekarang
+</a>
+</div>
+
+<div class="card">
+<h3>200 Mbps</h3>
+<div class="speed">200</div>
+<div class="price">Rp490.000</div>
+<a class="btn btn-secondary"
+href="https://wa.me/6281388097209?text=Saya%20tertarik%20paket%20200%20Mbps">
+Pesan Sekarang
+</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 class="section-title">Testimoni Pelanggan</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+⭐⭐⭐⭐⭐
+<p>"Internet sangat stabil untuk kerja dan streaming."</p>
+<b>- Andi</b>
+</div>
+
+<div class="testimonial">
+⭐⭐⭐⭐⭐
+<p>"Pemasangan cepat dan sales sangat membantu."</p>
+<b>- Rina</b>
+</div>
+
+<div class="testimonial">
+⭐⭐⭐⭐⭐
+<p>"Gaming jadi lancar tanpa lag."</p>
+<b>- Budi</b>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="daftar" class="section">
+<div class="container">
+
+<h2 class="section-title">Daftar Sekarang</h2>
+
+<div class="form-box">
+
+<form onsubmit="kirimWA(); return false;">
+
+<div class="form-group">
+<input type="text" id="nama" placeholder="Nama Lengkap" required>
+</div>
+
+<div class="form-group">
+<input type="text" id="hp" placeholder="Nomor HP" required>
+</div>
+
+<div class="form-group">
+<input type="text" id="alamat" placeholder="Alamat Pemasangan" required>
+</div>
+
+<div class="form-group">
+<select id="paketpilihan">
+<option>50 Mbps - Rp230.000</option>
+<option>75 Mbps - Rp250.000</option>
+<option>150 Mbps - Rp325.000</option>
+<option>200 Mbps - Rp490.000</option>
+</select>
+</div>
+
+<div class="form-group">
+<textarea id="catatan" rows="4" placeholder="Catatan Tambahan"></textarea>
+</div>
+
+<button class="submit-btn">
+Kirim ke WhatsApp
+</button>
+
+</form>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<h3>Sales IndiHome by Telkomsel</h3>
+<p>WhatsApp: 0813-8809-7209</p>
+<p>Siap melayani pemasangan baru dan upgrade paket.</p>
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/6281388097209">
+💬
+</a>
+
+<script>
+function kirimWA(){
+
+let nama = document.getElementById('nama').value;
+let hp = document.getElementById('hp').value;
+let alamat = document.getElementById('alamat').value;
+let paket = document.getElementById('paketpilihan').value;
+let catatan = document.getElementById('catatan').value;
+
+let pesan =
+`Halo Sales IndiHome
+
+Nama: ${nama}
+No HP: ${hp}
+Alamat: ${alamat}
+Paket: ${paket}
+
+Catatan:
+${catatan}`;
+
+window.open(
+'https://wa.me/6281388097209?text=' + encodeURIComponent(pesan),
+'_blank'
+);
+
+}
+</script>
+
 </body>
 </html>
